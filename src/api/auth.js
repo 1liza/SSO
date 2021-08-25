@@ -54,3 +54,15 @@ export function logout(accessToken) {
     }
   })
 }
+
+export function refreshToken(refreshToken) {
+  return request({
+    headers,
+    auth,
+    url: `/auth/user/refreshToken`,
+    method: 'get',
+    params: {
+      refreshToken
+    }
+  })
+}
