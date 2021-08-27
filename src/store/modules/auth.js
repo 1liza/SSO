@@ -11,7 +11,7 @@ import {
 // 定义状态，state必须是function
 const state = {
   userInfo: PcCookie.get(Key.userInfoKey) ?
-    PcCookie.get(Key.userInfoKey) : null, // 用户信息对象
+  PcCookie.get(Key.userInfoKey) : null, // 用户信息对象
   accessToken: PcCookie.get(Key.accessTokenKey), // 访问令牌字符串
   refreshToken: PcCookie.get(Key.refreshTokenKey), // 刷新令牌字符串
 }
@@ -69,6 +69,7 @@ const actions = {
         } = response
         if (code === 20000) {
           // 状态赋值
+          data.userInfo = JSON.stringify(data.userInfo)
           commit('SET_USER_STATE', data)
         }
         resolve(response) // 不要少了

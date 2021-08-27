@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 弹窗 -->
-    <div v-show="visiabe">
+    <div v-show="visible">
       <!--这里是要展示的内容层-->
       <div class="content">
         <span v-html="message"></span>
